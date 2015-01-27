@@ -1,0 +1,5 @@
+name = "Yukun He"
+SID = "24644819"
+email = "yukunhe@berkeley.edu"
+github_name = "yukunhe"
+status = "enrolled"
