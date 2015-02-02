@@ -78,8 +78,7 @@ max.m <- max(m)
 
 ### Keep in mind that load() loads the file relative to the working directory
 ### so you need to go to 
-###         Session > Set Working Directory > To Source File Location
-~/Downloads/family.rda
+###         Session > Set Working Directory > To Source File Location ~/Downloads/family.rda
 # Load family.rda that is in your hw1 folder, the variable is called family:
 load("family.rda")
 
