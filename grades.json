@@ -1,0 +1,23 @@
+{
+    "email": "yukunhe@berkeley.edu", 
+    "github_name": "yukunhe", 
+    "grades": {
+        "hw1": {
+            "note": "", 
+            "hash": "455674f25d5748615ee83b8f6cfd71c2751529d1", 
+            "earned": 20, 
+            "possible": 20, 
+            "penalty": 0, 
+            "parts": {
+                "hw1": {
+                    "possible": 20, 
+                    "earned": 20
+                }
+            }
+        }
+    }, 
+    "login": "yukunhe", 
+    "name": "Yukun He", 
+    "status": "enrolled", 
+    "url": "git@github.com:yukunhe/stat133.git"
+}
