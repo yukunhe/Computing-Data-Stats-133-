@@ -53,10 +53,10 @@ rooms.less.price<- bsqft.less$price
 # Your function should return the average of <prices> for all observations with
 # <br> in the range (inclusive) specified by <room.range>
 
-priceByRooms <- function(room.range, br, prices) { 
-  for (i in room.range){
-    return(mean(housing$price[housing$br==br])
-  }
+priceByRooms <- function(room.range, br, prices) {
+  rooms.table = table(br, prices)
+  mean=mean(rooms.table[rooms.table$br<=room.range[2]&rooms.table$br>= rooms.range[1],]$prices)
+    return(mean)
 }
 
 
