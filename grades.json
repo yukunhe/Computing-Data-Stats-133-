@@ -19,5 +19,6 @@
     "login": "yukunhe", 
     "name": "Yukun He", 
     "status": "enrolled", 
-    "url": "git@github.com:yukunhe/stat133.git"
+    "url": "git@github.com:yukunhe/stat133.git", 
+    "section": "lab3"
 }
