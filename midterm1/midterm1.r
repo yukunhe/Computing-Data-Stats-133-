@@ -9,6 +9,8 @@
 # mean.bsft <- your code here
 # med.bsqft <- your code here
 
+mean.bsqft <- mean(housing$bsqft,na.rm=T)
+med.bsqft<- median(housing$bsqft, na.rm=T)
 
 # For each house in the dataset, calculate the squared difference between its
 # bsqft and the median bsqft of houses in Berkeley. Store this as the variable
@@ -17,7 +19,7 @@
 
 # bsqft.diffs <- your code here
 
-
+bsqft.diffs<- (housing$bsqft)^2-med.bsqft^2
 
 # Please create two new data frames with the following two subsets
 # and store them with the indicated names:
@@ -27,6 +29,8 @@
 # bsqft.greater <- your code here
 # bsqft.less <- your code here
 
+bsqft.greater <- housing[housing$bsqft > mean.bsqft, ]
+bsqft.less<- housing[housing$bsqft <= mean.bsqft, ]
 
 # For each of your subsets, create a vector giving the price of each house. Name
 # these variables <rooms.greater.price> and <rooms.less.price>.
@@ -34,7 +38,8 @@
 # rooms.greater.price <- your code here
 # rooms.less.price <- your code here
 
-
+rooms.greater.price<- bsqft.greater$price
+rooms.less.price<- bsqft.less$price
 
 # Please implement the function priceByRooms. Your function should take the
 # following arguments:
@@ -48,9 +53,11 @@
 # Your function should return the average of <prices> for all observations with
 # <br> in the range (inclusive) specified by <room.range>
 
-priceByRooms <- function(room.range, br, prices) {
-
-    # your code here
+priceByRooms <- function(room.range, br, prices) { 
+  for (i in room$range){
+    if (housing$br)
+    return(mean(housing$price[housing$br])
+  }
 
 }
 
@@ -61,3 +68,4 @@ priceByRooms <- function(room.range, br, prices) {
 # 2) axis labels: "price" and "number of rooms"
 # 3) plotting character set to 20
 
+plot(housing$br,housing$price, main="Housing price vs Number of Rooms", xlab="number of rooms",ylab="price",type="p")
