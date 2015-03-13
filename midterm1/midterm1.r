@@ -54,11 +54,9 @@ rooms.less.price<- bsqft.less$price
 # <br> in the range (inclusive) specified by <room.range>
 
 priceByRooms <- function(room.range, br, prices) { 
-  for (i in room$range){
-    if (housing$br)
-    return(mean(housing$price[housing$br])
+  for (i in room.range){
+    return(mean(housing$price[housing$br==br])
   }
-
 }
 
 
