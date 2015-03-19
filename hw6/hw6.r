@@ -28,6 +28,21 @@
 #                 non-adopter, else 1 (so once a row turns to 1 it stays as 1).
 
 sim.doctors <- function(initial.doctors, n.doctors, n.days, p){
+  has.adopted <- matrix(initial.doctors, ncol=1)
+  for (i in 2:n.days) {
+    two_random_doctors = sample(n.doctors, size=2, replace = T)
+    if (initial.doctors[two_random_doctors[1]] != initial.doctors[two_random_doctors[2]]){
+      if (initial.doctors[two_random_doctors[1]]==0) {
+        initial.doctors[two_random_doctors[1]]=sample(c(0,1), 1, prob=c(1-p,p))
+       }
+      if (initial.doctors[two_random_doctors[2]]==0){
+        initial.doctors[two_random_doctors[2]]=sample(c(0,1), 1, prob=c(1-p,p))
+      }
+      }
+    has.adopted = cbind(has.adopted,initial.doctors)
+    }
+  return (has.adopted)
+  }
 
   # Set up the output variable, define it as a matrix then use initial.doctors
   # to set the first column (day)
@@ -39,7 +54,7 @@ sim.doctors <- function(initial.doctors, n.doctors, n.days, p){
 
   # return the output
 
-}
+
 
 # When you test your function you have to generate <initial.doctors> and
 # pick values for the other input parameters.
@@ -51,3 +66,25 @@ set.seed(42)
 # on y-axis : the number of doctors that have already adopted the drug, on that day
 # Put all 5 lines in one figure (e.g. use first plot() then lines() for the subsequent lines)
 
+initial.doctors = rep(c(0,1),c(90,10))
+
+a = sim.doctors(initial.doctors, 100, 100,1/2)
+plot(1:100,colSums(a),type="l",xlab="days",ylab="number of doctors adopted the drug")
+
+b = sim.doctors(initial.doctors, 100, 100,1/4)
+plot(1:100,colSums(b),type="l",col="blue",xlab="days",ylab="number of doctors adopted the drug")
+
+c = sim.doctors(initial.doctors, 100, 100,1/5)
+plot(1:100,colSums(c),type="l",col="green",xlab="days",ylab="number of doctors adopted the drug")
+
+d = sim.doctors(initial.doctors, 100, 100,1/8)
+plot(1:100,colSums(d),type="l",col="yellow",xlab="days",ylab="number of doctors adopted the drug")
+
+e = sim.doctors(initial.doctors, 100, 100,1/9)
+plot(1:100,colSums(e),type="l",col="red",xlab="days",ylab="number of doctors adopted the drug")
+
+plot(1:100,colSums(a),type="l",xlab="days",ylab="number of doctors adopted the drug")+
+  lines(1:100,colSums(b),col="blue")+
+  lines(1:100,colSums(c),col="green")+
+  lines(1:100,colSums(d), col="yellow")+
+  lines(1:100,colSums(e), col="red")
