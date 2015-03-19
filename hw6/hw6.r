@@ -28,7 +28,7 @@
 #                 non-adopter, else 1 (so once a row turns to 1 it stays as 1).
 
 sim.doctors <- function(initial.doctors, n.doctors, n.days, p){
-  has.adopted <- matrix(initial.doctors, ncol=1)
+  has_adopted <- matrix(initial.doctors, ncol=1)
   for (i in 2:n.days) {
     two_random_doctors = sample(n.doctors, size=2, replace = T)
     if (initial.doctors[two_random_doctors[1]] != initial.doctors[two_random_doctors[2]]){
@@ -39,9 +39,9 @@ sim.doctors <- function(initial.doctors, n.doctors, n.days, p){
         initial.doctors[two_random_doctors[2]]=sample(c(0,1), 1, prob=c(1-p,p))
       }
       }
-    has.adopted = cbind(has.adopted,initial.doctors)
+    has_adopted = cbind(has_adopted,initial.doctors)
     }
-  return (has.adopted)
+  return (has_adopted)
   }
 
   # Set up the output variable, define it as a matrix then use initial.doctors
