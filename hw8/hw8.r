@@ -101,10 +101,10 @@ repBoot = function(data, B = 1000){
   ### fit is for a line or a quadratic
   ### Return this list
   coeff = list()
-  coeff[[1]] = replicate(B, oneBoot(Data, fit = NULL, degree = 1))
-  coeff[[2]] = replicate(B, oneBoot(Data, fit = NULL, degree = 2))
-  coeff[[3]] = replicate(B, oneBoot(Data, fit = fit, degree = 1))
-  coeff[[4]] = replicate(B, oneBoot(Data, fit = fit, degree = 2))
+  coeff[[1]] = replicate(B, oneBoot(data, fit = NULL, degree = 1))
+  coeff[[2]] = replicate(B, oneBoot(data, fit = NULL, degree = 2))
+  coeff[[3]] = replicate(B, oneBoot(data, fit = fit, degree = 1))
+  coeff[[4]] = replicate(B, oneBoot(data, fit = fit, degree = 2))
   
   ### Replicate a call to oneBoot B times for 
   ### each of the four conditions
