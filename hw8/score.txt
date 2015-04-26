@@ -1,0 +1,4 @@
+line 107: use quadratic fit when degree =2  -2
+bootPlot: use transparency as instructed  -1
+
+Score: 17/20
