@@ -1,0 +1,4 @@
+load("/Users/Diane/Downloads/family.rda")
+load("/Users/Diane/src/stat133/assignments/hw1/family.rda")
+load("/Users/Diane/Downloads/family.rda")
+load("/Users/Diane/src/stat133/assignments/hw1/family.rda")
