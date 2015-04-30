@@ -75,11 +75,11 @@ hisToTheir <- function(chvec){
 
 mostCommonLetter <- function(chvec){
   chvec = tolower(chvec)
-  chvec = unlist(strsplit(chvec,""))
-  chvec = chvec[chvec == "[[a-z]]"]
+  r= unlist(strsplit(chvec,""))
+  r= r[r == "[[a-z]]"]
   table(chvec)
   s = data.frame(table(chvec))
-  return (s$chvec[s$Freq == max(s$Freq)])
+  return (as.character(s$chvec[s$Freq == max(s$Freq)]))
 }
 
 

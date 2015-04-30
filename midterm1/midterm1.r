@@ -55,8 +55,8 @@ rooms.less.price<- bsqft.less$price
 
 priceByRooms <- function(room.range, br, prices) {
   rooms.table = table(br, prices)
-  mean=mean(rooms.table[rooms.table$br<=room.range[2]&rooms.table$br>= rooms.range[1],]$prices)
-    return(mean)
+  means=mean(rooms.table[rooms.table$br<=room.range[2]&rooms.table$br>= rooms.range[1],]$prices)
+  return(means)
 }
 
 
