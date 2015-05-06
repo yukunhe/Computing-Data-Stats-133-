@@ -1,0 +1,7 @@
+w: wrong permutation  -1
+boxplot  -2
+line 111: wrong plot  -2
+line 120: wrong plot  -2
+mean.long.cache: no variable defined  -3
+
+Score: 23/33
