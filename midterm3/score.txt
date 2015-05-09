@@ -1,0 +1,21 @@
+Total: 18/20
+
+Function 1
+5/5
+
+Function 2
+5/5
+
+Function 3
+5/5
+
+Function 4
+3/5
+Using strsplit and table is good, but line 79 is not valid R, it might instead
+be   r= r[r %in% letters]. Line 81 might be   s = data.frame(table(r))
+
+There is also a further bug in the return statement.
+
+
+
+
