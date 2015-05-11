@@ -1,0 +1,94 @@
+---
+title: "STAT 133 Lab 4"
+date: "February 12, 2015"
+output: pdf_document
+---
+#Introduction
+Welcome to Lab 4 of STAT 133. In this lab we will learn how to write functions in R and how to apply the functions we have written in an efficient way.
+
+#The basics of functions in R
+Say you want to do the same thing many times in R. For example, you might often need to add two numbers together. We could write out the code every time:
+
+```{r}
+1 + 1
+1 + 2
+```
+But this is a bit tiresome and we might wonder if there is a better way. The better way is to write a function. A function is a collection of R commands that together perform a task.  We can write a helpful function as follows:
+
+```{r}
+add <- function(x, y) {
+  x + y
+  }
+```
+
+Then we use the function:
+```{r}
+add(1,2)
+```
+There are three things about a function you need to know: its input; the task it performs; and its output. In this example, the input are the numbers 1 and 2; the task it performs is addition; and the output is the result of that addition.
+
+
+**Exercise 1a.** Write a function that calculates the average of two numbers (don't use ``mean``). 
+
+**Exercise 1b.** Write a function that calculates the average of an arbitrary number of numeric values.
+
+**Exercise 2.** Write a function that takes arguments ``x`` and ``y``, both numeric vectors, and draws a scatter plot of ``y`` against ``x``. Use this function to plot ``Sepal.Length`` against ``Sepal.Width`` in the ``iris`` dataset.
+
+```{r, echo=FALSE}
+```
+
+The functions we have looked at so far did only one thing, but functions can do as many things as we like. For example we can write a function that finds the mean, median, min and max of a vector: 
+
+```{r}
+summarizer <- function(x) {
+  mean.x <- mean(x)
+  median.x <- median(x)
+  min.x <- min(x)
+  max.x <- max(x)
+  return(c(mean.x,
+           median.x, min.x, max.x))
+}
+summarizer(iris$Sepal.Length)
+```
+Now it's your turn.
+
+**Exercise 3.** Write a function that takes a numeric vector ``x``,  constructs a boxplot using ``boxplot()`` and then calculates and returns the quartiles of ``x``.
+
+**Exercise 4.** Write a function that takes a data.frame ``data``, and returns the names of the columns which are numeric. Test the function with the ``iris`` data set. 
+
+**Exercise 5.** Write a function that takes a numeric vector ``x`` as its argument and returns the mean  of ``x`` if fewer than 50\% of the missing otherwise return NA. Here is a hint:
+```{r}
+x <- 5
+{
+if (x < 5) print("Yes") 
+else print("No")
+}
+```
+
+#The apply family
+Writing a function is great, but to be really efficient we also need a nice way to apply the function to many different objects. In R the ``apply`` family of functions does this. Here is an example
+```{r}
+square <- function(x) x^2
+sapply(1:5, square)
+```
+Do you see what is going on? The ``sapply`` function will evaluate our square function for each of the numbers from one to five. We can get the same result in a much clumsier way with:
+```{r}
+c(square(1), square(2), square(3), square(4), square(5))
+```
+
+**Exercise 6a.** Write a function that takes a vector ``x`` and returns its mean if it is numeric or "Not numeric!" if it is not numeric
+
+**Exercise 6b.** Use sapply and the function you wrote in 6a to find the means of all the columns in the dataset. Hint: try and work out what ``sapply(iris,  function(x) x[1])`` is doing.
+
+The other main function in the apply family is tapply. The help file for this function is quite confusing! We will see what it does in a few simple examples:
+```{r}
+my.paste <- function(x) paste(x, collapse = "")
+tapply(c("a", "b", "c", "d", "e", "f"), c(1,1,2,2,3,3), my.paste)
+tapply(c("a", "b", "c", "d", "e", "f"), c(1,2,1,2,2,3), my.paste)
+```
+**Exercise 7.** Use ``tapply`` to calculate the mean ``Petal.Width`` for each ``Species`` in the iris dataset. 
+
+**Exercise 8.** Use tapply to find the maximum ``Sepal.Length`` for each ``Species`` in the iris dataset.
+
+
+
