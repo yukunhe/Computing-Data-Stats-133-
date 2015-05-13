@@ -65,7 +65,7 @@ x<- 3*c(1:1200)
 # y <- <your code here>
 y<-list()
 for (i in 1:10) {
-  list[[i]]=seq(i:1000, by=i)
+#  list[[i]]=seq(i:1000, by=i)
 }
 
 
@@ -341,7 +341,7 @@ standardizeVar<- function(m,cols=T) {
 ##   <your code here>
   
 ## }
-permDiff <- funciton(cases,controls,k=5000) {
+permDiff <- function(cases,controls,k=5000) {
   cases1 = sample(c(cases,controls),k=5000)
   controls1 = c(cases,controls)[-c(cases,controls)==cases1]
   return (mean(cases1)-mean(controls1))
