@@ -20,7 +20,7 @@ set.seed(123456)
 # We've set the default inputs to k=2 and B=100
 
 dice_sum <- function(k=2, B=100){
-  if (k = 1) {
+  if (k == 1) {
     s = sample(1:6, size=k, replace=T)
   } else {
     s = sample(1:6, size=k, replace=T)
