@@ -27,6 +27,23 @@
                     "earned": 17
                 }
             }
+        }, 
+        "hw2": {
+            "note": "", 
+            "hash": "d4503f33f3a82364f2b40144b5edba2bfdfaaba5", 
+            "earned": 30, 
+            "possible": 31, 
+            "penalty": 0, 
+            "parts": {
+                "hw2_fig": {
+                    "possible": 20, 
+                    "earned": 20
+                }, 
+                "hw2": {
+                    "possible": 11, 
+                    "earned": 10
+                }
+            }
         }
     }, 
     "login": "yukunhe", 
